@@ -224,7 +224,7 @@ void passer(){
         
 }
 
-void analyseurSyntaxique(){
+void analyseurLexical(){
     while (CHAR_COUR!=EOF)
     {
         //Separateur
@@ -263,12 +263,12 @@ int main(){
     scanf("%s",path);
      f= fopen(path,"r");
      */
-    f= fopen("./tests/test0.txt","r");
+    f= fopen("./tests/test1.txt","r");
     if(f==NULL){
         printf(">>>File not found!");
         exit(EXIT_FAILURE);
     }
-    analyseurSyntaxique();
+    analyseurLexical();
     
     return 0;
 }

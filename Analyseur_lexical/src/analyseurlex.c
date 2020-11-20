@@ -232,6 +232,7 @@ OUTPUT* analyseurLexical(){
 
 void Erreur(CODES_ERREURS ERR){
     int ind_err = ERR;
-    printf( "Erreur numéro %d t : %s n", ind_err);
+    printf( "Erreur numéro %d\n", ind_err);
+    printf("Unexpected Token: %s ",REVERSE_ENUM[Sym_Cour->Code]);
     exit(1);
 }

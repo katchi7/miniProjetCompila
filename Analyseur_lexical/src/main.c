@@ -12,7 +12,7 @@ int main(){
     scanf("%s",path);
      f= fopen(path,"r");
      */
-    f= fopen("./tests/test1.txt","r");
+    f= fopen("./tests/test0.txt","r");
     if(f==NULL){
         printf(">>>File not found!");
         exit(EXIT_FAILURE);
@@ -24,7 +24,7 @@ int main(){
         printf("Token : %s\n",REVERSE_ENUM[out->Code]);
     }
     */
-    PROGRAM();
+    PROGRAM();//analyseur_syntaxique.c
     if (Sym_Cour->Code ==FIN_TOKEN) printf("BRAVO: le programme est Correcte");
     else printf ("PAS BRAVO: fin de programme erronée! ");
     

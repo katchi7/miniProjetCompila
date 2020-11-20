@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-OUTPUT *Sym_Cour;
+
 void PROGRAM();
 
 #endif

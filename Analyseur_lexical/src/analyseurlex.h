@@ -15,7 +15,10 @@ typedef struct {
     CODES_LEX Code;
     char NOM[20];
 }OUTPUT;
-
+typedef enum{
+    ERR_CAR_INC, ERR_FICH_VID, ERR_ID_LONG,PROGRAM_ERR,ID_ERR,PV_ERR,PT_ERR
+}CODES_ERREURS;
+typedef struct { CODES_ERREURS CODE_ERR; char mes[40]; }Erreurs;
 //Variables globales
 char CHAR_COUR;
 FILE *f;
@@ -30,4 +33,5 @@ OUTPUT* LireNum();
 OUTPUT* Lire_Car();
 void passer();
 OUTPUT* analyseurLexical();
+void Erreur(CODES_ERREURS ERR);
 #endif

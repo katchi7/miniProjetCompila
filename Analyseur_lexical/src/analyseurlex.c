@@ -229,3 +229,9 @@ OUTPUT* analyseurLexical(){
     return output;
 
 }
+
+void Erreur(CODES_ERREURS ERR){
+    int ind_err = ERR;
+    printf( "Erreur numéro %d t : %s n", ind_err);
+    exit(1);
+}

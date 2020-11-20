@@ -2,7 +2,7 @@ program test;
 const tata=12;
 var x,titi;
 begin
-   titi:=test;
+   titi :=test;
 end.
 
 

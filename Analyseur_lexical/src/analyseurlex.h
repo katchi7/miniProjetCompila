@@ -40,4 +40,5 @@ OUTPUT* Lire_Car();
 void passer();
 OUTPUT* analyseurLexical();
 void Erreur(CODES_ERREURS ERR);
+void PROGRAM();
 #endif

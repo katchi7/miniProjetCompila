@@ -1,14 +1,15 @@
 #include "analyseurlex.h"
-#include "analyseur_syntaxique.h"
 void Sym_Suiv(){
     Sym_Cour = analyseurLexical();
+    if( Sym_Cour->Code==ERREUR_TOKEN){
+        Erreur(ERR_CAR_INC);
+    }
 }
 void Test_Symbole(CODES_LEX cl,CODES_ERREURS ERR){
     if(Sym_Cour->Code == cl){
         Sym_Suiv();
     }
     else{
-     printf("Expected %s , Got %s",REVERSE_ENUM[cl],REVERSE_ENUM[Sym_Cour->Code]);
      Erreur(ERR);}
 }
 

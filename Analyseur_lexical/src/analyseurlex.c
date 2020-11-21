@@ -1,5 +1,14 @@
 #include "analyseurlex.h"
 
+Erreurs MES_ERR[100]={{ERR_CAR_INC,"Uknown caracter"},{ERR_FICH_VID,"Empty File"},
+                    {ERR_ID_LONG,"Long Id"},{PROGRAM_TOKEN,"Expected a Program token"},
+                    {ID_ERR,"Expected an Id"},{PV_ERR,"; Expected"},{PT_ERR,". Expected"},{CONST_ERR,"CONST expected"},
+                    {EQ_ERR,"Expected ="},{NUM_ERR,"A num expected"},{CONST_VAR_BEGIN_ERR,"Unexpected Token recieved"},
+                    {VAR_BEGIN_ERR,"Unexpected Token recieved"},{VAR_ERR,"Expected a var"},{VIR_ERR,", Expected"},
+                    {BEGIN_ERR,"Expected Begin token"},{END_ERR,"Expected an End token"},{INST_ERR,"Ecpected Inst token"},
+                    {AFF_ERR,"Expected :="},{IF_ERR,"Expected If token"},{THEN_ERR,"Expected Then toke"},{WHILE_ERR,"Expected WHILE token"},
+                    {DO_ERR,"Do token expected"},{WRITE_ERR,"Write token expected"},{PO_ERR,"( Expected"},{PF_ERR,") Expected"},
+                    {READ_ERR,"Read token expected"},{RELOP_ERR,"got an unexpected token "},{FACT_ERR,"got an unexpected token "}};
 
 char *toLowerCase(char *s){
     for(int i = 0; s[i]; i++){
@@ -203,6 +212,9 @@ void passer(){
             LireChar();
         }
     }
+    if(CHAR_COUR==EOF){
+        Erreur(ERR_FICH_VID);
+    }
         
 }
 
@@ -232,7 +244,6 @@ OUTPUT* analyseurLexical(){
 
 void Erreur(CODES_ERREURS ERR){
     int ind_err = ERR;
-    printf( "Erreur numéro %d\n", ind_err);
-    printf("Unexpected Token: %s ",REVERSE_ENUM[Sym_Cour->Code]);
+    printf( "Erreur numéro %d, %s\n", ind_err,MES_ERR[ERR].mes);
     exit(1);
 }
